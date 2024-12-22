@@ -24,14 +24,14 @@ def spacy_prediction(text):
     # Example usage after classification
     #text = "Develop a mobile game with cloud-based storage and AI-driven difficulty adjustments."
     doc = nlp(text)
-    top_3_predicted_categories = sorted(doc.cats.items(), key=lambda x: x[1], reverse=True)[:3]
     predictedCats = []
-    for label,score in top_3_predicted_categories:
-        predictedCats.append(label)
+    for label,score in doc.cats.items():
+        if score > .1:
+            predictedCats.append(label)
     # Print the top 3 categories with their scores
     return predictedCats
 
-print(spacy_prediction("Im a web site developer that stores user data to make profiles and chat in real time"))
+#print(spacy_prediction("Im a web site developer that stores user data to make profiles and chat in real time"))
 # Suggest technologies based on predicted categories
 # suggested_technologies = []
 # for category in predicted_categories:
