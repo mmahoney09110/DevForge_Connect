@@ -10,19 +10,11 @@ public class PythonServerHostedService: IHostedService {
     public Task StartAsync(CancellationToken cancellationToken) {
         Console.WriteLine("Starting Python Server...");
         try {
-			string currentDirectory = Directory.GetCurrentDirectory();
-
-            // Move up one folder to the parent directory
-            string parentDirectory = Directory.GetParent(currentDirectory)?.FullName;
-
-			// Define the path to the virtual environment folder
-			string virtualEnvPath = Path.Combine(parentDirectory, "AI_LLM_Analysis", "venv", "Scripts");
-
 			// Set the working directory to the AI_LLM_Analysis folder
-			string workingDirectory = Path.Combine(parentDirectory, "AI_LLM_Analysis");
+			string workingDirectory = "AI_LLM_Analysis";
 
 			// Use the activation script for Windows
-			string venvActivateCommand = Path.Combine(virtualEnvPath, "activate.bat");
+			string venvActivateCommand = Path.Combine("venv", "Scripts", "activate.bat");
 
 			// Define the FastAPI command to run from the AI_LLM_Analysis folder
 			string fastapiCommand = "uvicorn main:app --reload";
@@ -31,7 +23,6 @@ public class PythonServerHostedService: IHostedService {
             string createVenvCommand = $"python -m venv venv";
             string installRequirementsCommand = $"pip install -r requirements.txt";
             string runServer = "fastapi dev main.py";
-
             ProcessStartInfo psi = new ProcessStartInfo
             {
                 FileName = "cmd.exe",
@@ -46,7 +37,7 @@ public class PythonServerHostedService: IHostedService {
 
             if (_pythonProcess != null)
             {
-                Console.WriteLine("Fast Api server started successfully with virtual environment");
+                Console.WriteLine("Fast Api server starting...");
             }
 
         } catch (Exception ex)

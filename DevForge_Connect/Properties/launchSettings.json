@@ -16,7 +16,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "dotnetRunMessages": true,
-      "applicationUrl": "http://localhost:7009;http://localhost:502",
+      "applicationUrl": "https://localhost:44300;http://localhost:502",
       "sslPort": 44304
     },
     "IIS Express": {

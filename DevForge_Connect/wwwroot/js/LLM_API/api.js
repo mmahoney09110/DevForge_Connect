@@ -33,7 +33,7 @@ function SendMessageGemini(message) {
                 document.getElementById("load").remove()
                 //When we receive a not ok network response from FastAPI Server
                 var today = new Date();
-                if (today.getMinutes() < 9) { var time = today.getHours() + ":0" + today.getMinutes(); }
+                if (today.getMinutes() < 10) { var time = today.getHours() + ":0" + today.getMinutes(); }
                 else { var time = today.getHours() + ":" + today.getMinutes(); }
 
                 var encodedMsg = "<div class='border border-primary rounded-4 m-1 p-1'><p><strong>" + "    Chat Bot" + "</strong> <span class='messageTime'>" + time + "</span><hr></p><p>    " + "    I could not process the message. Please try again." + "</p></div>";

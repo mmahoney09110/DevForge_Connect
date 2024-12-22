@@ -34,16 +34,17 @@ connection.start().then(function () {
 });
 
 // Send button click event
+// Send button click event
 document.getElementById("sendButton").addEventListener("click", function (event) {
     var message = document.getElementById("messageInput").value;
-
+    console.log(message); // Check if this logs 'null'
     if (message !== "") {
         const msg = message.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
         (async () => {
             try {
-                await connection.invoke("SendMessage", message); 
-                SendMessageGemini(msg); 
+                await connection.invoke("SendMessage", message);
+                SendMessageGemini(msg);
             } catch (err) {
                 console.error(err.toString());
             }

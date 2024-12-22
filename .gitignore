@@ -363,5 +363,5 @@ MigrationBackup/
 FodyWeavers.xsd
 
 #Virutal environment
-AI_LLM_ANALYSIS/venv
-AI_LLM_ANALYSIS/test_venv
+DevForge_Connect/AI_LLM_ANALYSIS/venv
+DevForge_Connect/AI_LLM_ANALYSIS/env
