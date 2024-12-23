@@ -10,9 +10,7 @@ namespace DevForge_Connect.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_UserTeams_AspNetUsers_UserId",
-                table: "UserTeams");
+            migrationBuilder.Sql("ALTER TABLE `UserTeams` DROP FOREIGN KEY `FK_UserTeams_AspNetUsers_UserId`;");
 
             migrationBuilder.AddForeignKey(
                 name: "FK_UserTeams_AspNetUsers_UserId",

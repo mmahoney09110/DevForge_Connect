@@ -54,13 +54,8 @@ namespace DevForge_Connect.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_ProjectBids_Teams_TeamId",
-                table: "ProjectBids");
-
-            migrationBuilder.DropForeignKey(
-                name: "FK_ProjectSubmissions_Teams_TeamId",
-                table: "ProjectSubmissions");
+            migrationBuilder.Sql("ALTER TABLE `ProjectBids` DROP FOREIGN KEY `FK_ProjectBids_Teams_TeamId`;");
+            migrationBuilder.Sql("ALTER TABLE `ProjectBids` DROP FOREIGN KEY `FK_ProjectSubmissions_Teams_TeamId`;");
 
             migrationBuilder.DropIndex(
                 name: "IX_ProjectSubmissions_TeamId",

@@ -13,14 +13,14 @@ namespace DevForge_Connect.Migrations
             migrationBuilder.AddColumn<string>(
                 name: "AIGeneratedSummary",
                 table: "ProjectSubmissions",
-                type: "nvarchar(max)",
+                type: "varchar(450)",
                 nullable: false,
                 defaultValue: "");
 
             migrationBuilder.AddColumn<string>(
                 name: "NlpTags",
                 table: "ProjectSubmissions",
-                type: "nvarchar(max)",
+                type: "varchar(450)",
                 nullable: true);
         }
 

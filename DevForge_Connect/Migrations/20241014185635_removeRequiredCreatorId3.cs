@@ -10,9 +10,8 @@ namespace DevForge_Connect.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_UserTeams_Teams_TeamId",
-                table: "UserTeams");
+            migrationBuilder.Sql("ALTER TABLE `UserTeams` DROP FOREIGN KEY `FK_UserTeams_Teams_TeamId`;");
+
 
             migrationBuilder.AlterColumn<string>(
                 name: "UserId",
@@ -41,9 +40,8 @@ namespace DevForge_Connect.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_UserTeams_Teams_TeamId",
-                table: "UserTeams");
+            migrationBuilder.Sql("ALTER TABLE `UserTeams` DROP FOREIGN KEY `FK_UserTeams_Teams_TeamId`;");
+
 
             migrationBuilder.AlterColumn<string>(
                 name: "UserId",

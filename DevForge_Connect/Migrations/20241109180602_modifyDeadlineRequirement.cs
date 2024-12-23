@@ -14,10 +14,10 @@ namespace DevForge_Connect.Migrations
             migrationBuilder.AlterColumn<DateTime>(
                 name: "Deadline",
                 table: "ProjectSubmissions",
-                type: "datetime2",
+                type: "datetime",
                 nullable: true,
                 oldClrType: typeof(DateTime),
-                oldType: "datetime2");
+                oldType: "datetime");
         }
 
         /// <inheritdoc />
@@ -30,7 +30,7 @@ namespace DevForge_Connect.Migrations
                 nullable: false,
                 defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                 oldClrType: typeof(DateTime),
-                oldType: "datetime2",
+                oldType: "datetime",
                 oldNullable: true);
         }
     }

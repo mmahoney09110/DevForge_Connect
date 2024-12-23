@@ -13,7 +13,7 @@ namespace DevForge_Connect.Migrations
             migrationBuilder.AddColumn<string>(
                 name: "Expirience",
                 table: "UserProfile",
-                type: "nvarchar(max)",
+                type: "varchar(450)",
                 nullable: true);
         }
 

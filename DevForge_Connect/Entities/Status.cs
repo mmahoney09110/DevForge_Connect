@@ -1,4 +1,6 @@
-﻿namespace DevForge_Connect.Entities
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace DevForge_Connect.Entities
 {
     public class Status
     {
